@@ -46,7 +46,7 @@ $LANG = array(
 # class.plx.media.php
 
 'L_PLXMEDIAS_MEDIAS_FOLDER_ERR'		=> 'Impossible de créer le dossier médias pour l\'utilisateur connecté',
-'L_PLXMEDIAS_MEDIAS_FOLDER_ERR'		=> 'Le dossier demandé n\'existe pas',
+'L_PLXMEDIAS_MEDIAS_UNKNOW_FOLDER'	=> 'Le dossier demandé n\'existe pas',
 'L_PLXMEDIAS_ROOT'					=> 'racine',
 'L_PLXMEDIAS_DELETE_FILES_SUCCESSFUL'=> 'Fichiers supprimés avec succès',
 'L_PLXMEDIAS_DELETE_FILES_ERR'		=> 'Erreur pendant le suppression d\'un fichier',
