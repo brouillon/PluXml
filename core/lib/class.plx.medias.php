@@ -38,7 +38,7 @@ class plxMedias {
 		# Création du dossier réservé à l'utilisateur connecté s'il n'existe pas
 		if(!is_dir($this->path)) {
 			if(!mkdir($this->path,0755))
-				 return plxMsg::Error(L_PLXMEDIAS_MEDIAS_FOLDER_ERR);
+				return plxMsg::Error(L_PLXMEDIAS_MEDIAS_FOLDER_ERR);
 		}
 		# Vérification de l'existance du dossier à charger
 		if(!is_dir($this->path.$this->dir)) {
