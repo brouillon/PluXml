@@ -14,7 +14,7 @@ class plxMedias {
 	public $aFiles = array(); # liste des fichiers d'un dossier
 	public $maxUpload = array(); # taille maxi des images
 
-	public $thumbQuality = 60; # qualite image
+	public $thumbQuality = 60; # qualité image
 	public $thumbWidth = 60; # largeur des miniatures
 	public $thumbHeight = 60; # hauteur des miniatures
 
@@ -65,8 +65,8 @@ class plxMedias {
 	/**
 	 * Méthode récursive qui retourne un tableau de tous les dossiers et sous dossiers dans un répertoire
 	 *
-	 * @param	dir		repertoire de lecture
-	 * @param	level	profondeur du repertoire
+	 * @param	dir		répertoire de lecture
+	 * @param	level	profondeur du répertoire
 	 * @return	folders	tableau contenant la liste de tous les dossiers et sous dossiers
 	 * @author	Stephane F
 	 **/
@@ -157,18 +157,16 @@ class plxMedias {
 
 		$str  = "\n".'<select class="folder_list" id="folder_list" size="1" name="folder_list">'."\n";
 		$selected = (empty($this->dir)?'selected="selected" ':'');
-		$str .= '<option '.$selected.'value=".">|. ('.L_PLXMEDIAS_ROOT.') &nbsp; </option>'."\n";
+		$str .= '<option '.$selected.'value=".">('.L_PLXMEDIAS_ROOT.') &nbsp; </option>'."\n";
 		# Dir non vide
 		if(!empty($this->aDirs)) {
 			foreach($this->aDirs as $k => $v) {
-				$prefixe = '|&nbsp;&nbsp;';
 				$i = 0;
 				while($i < $v['level']) {
-					$prefixe .= '&nbsp;&nbsp;&nbsp;';
 					$i++;
 				}
 				$selected = ($v['path']==$this->dir?'selected="selected" ':'');
-				$str .= '<option class="level_'.$v['level'].'" '.$selected.'value="'.$v['path'].'">'.$prefixe.$v['name'].'</option>'."\n";
+				$str .= '<option class="level_'.$v['level'].'" '.$selected.'value="'.$v['path'].'">/'.$v['path'].'</option>'."\n";
 			}
 		}
 		$str  .= '</select>'."\n";
@@ -382,8 +380,8 @@ class plxMedias {
 	 * Méthode qui envoi une liste de fichiers sur le serveur
 	 *
 	 * @param	files	fichiers à uploader
-	 * @param	post	parametres
-	 * @return  msg		resultat de l'envoi des fichiers
+	 * @param	post	paramètres
+	 * @return  msg		résultat de l'envoi des fichiers
 	 * @author	Stephane F
 	 **/
 	public function uploadFiles($files, $post) {
