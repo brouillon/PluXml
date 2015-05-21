@@ -11,9 +11,8 @@ include(dirname(__FILE__).'/prepend.php');
 
 # Control du token du formulaire
 plxToken::validateFormToken($_POST);
-//TODO check dir without but allow / pas beau !
 # Sécurisation du chemin du dossier de destination et de visualisation
-if(isset($_POST['folder']) AND $_POST['folder']!='.' AND $_POST['folder']!='..' AND !plxUtils::checkSource(str_replace('/', '', $_POST['folder']))) {
+if(isset($_POST['folder']) AND $_POST['folder']!='.' AND $_POST['folder']!='..' AND !plxUtils::checkSource($_POST['folder'])) {
 	$_POST['folder']='.';
 }
 
